@@ -1,0 +1,50 @@
+<nav>
+    <div class="nav-wrapper blue">
+        <a href="#" data-activates="main-menu" class="button-collapse show-on-large"><i class="fa fa-bars"></i></a>
+        <a href="/bible/verse" class="brand-logo center">The Bible</a>
+        <ul class="left hide-on-small-only">
+            <li><a href="/"><i class="fa fa-home"></i>Home</a></li>
+        </ul>
+        <ul class="right hide-on-med-and-down">
+            {{#if user}}
+                <li>Welcome <strong class="allCapital">{{user.username}}</strong></li>
+                <li><a href="/user/logout">Logout</a></li>
+            {{else}}
+                <li><a href="/user/register">Register Now!</a></li>
+                <li><a href="/user/login">Login</a></li>
+            {{/if}}
+
+
+
+        </ul>
+
+
+        <!-- SIDE MENU -->
+        <ul class="side-nav blue" id="main-menu">
+            <li><a href="/"><i class="fa fa-home"></i>Home</a></li>
+
+            <li class="divider"></li>
+
+            {{#if user}}
+            {{else}}
+                <li><a href="/user/register"><i class="fa fa-register"></i>Register</a></li>
+                <li><a href="/user/login"><i class="fa fa-sign-in"></i>Login</a></li>
+                <li class="divider"></li>
+            {{/if}}
+
+            {{#if user}}
+                <li><a href="/bible"><i class="fa fa-plus"></i>Add A Verse</a></li>
+                <li><a href="/bible/account"><i class="fa fa-user"></i> My Account</a></li>
+            {{/if}}
+
+            <li><a href="/bible/verse"><i class="fa fa-book"></i>Verses</a></li>
+
+            <li class="divider"></li>
+            {{#if user}}
+                <li><a href="/user/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
+            {{/if}}
+
+        </ul>
+
+    </div>
+</nav>

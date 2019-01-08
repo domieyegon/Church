@@ -1,0 +1,26 @@
+<table class="striped grey">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Date</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#each verse}}
+    <tr>
+        <td><a href="/bible/show/{{id}}" class="to-capital blue-text">{{title}}</a></td>
+        <td>{{dateFormat date 'MMMM Do YYYY, HH:MM'}}</td>
+        <td>
+            <a href="/bible/edit/{{id}}" class="btn left-align"><i class="fa fa-pencil"></i>Edit</a>
+            <form action="/bible/{{id}}?_method=DELETE" method="post" id="delete-form">
+                <input type="hidden" name="_method" value="DELETE">
+                <button type="submit" class="btn red"><i class="fa fa-remove"></i>Delete</button>
+            </form>
+        </td>
+    </tr>
+    {{else}}
+        <p class="red-text">Nothing in your account Yet! Add some verses or Bible Stories</p>
+    {{/each}}
+    </tbody>
+</table>

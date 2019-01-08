@@ -1,0 +1,15 @@
+<h1 class="blue-text">Verses </h1>
+<div class="row">
+    {{#each verses}}
+        <div class="col s12 m6">
+            <div class="card">
+                <div class="card-content">
+                    <h3 class="light-blue-text to-capital">{{title}}</h3>
+                    <p class="to-capital"><p class="story-text">{{stripTags (truncate content 150)}}</p> <a href="/bible/show/{{id}}" class="">Read more</a></p>
+                </div>
+            </div>
+        </div>
+    {{else}}
+        <p class="red-text">No verses Posted. Login to post one</p>
+    {{/each}}
+</div>

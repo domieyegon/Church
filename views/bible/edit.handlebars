@@ -1,0 +1,26 @@
+<h1>Edit</h1>
+
+<div class="card">
+    <div class="row">
+        <div class="col s12">
+            <form class="col s12" action="/bible/{{verse.id}}?_method=PUT" method="post">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="title" type="text" class="validate" name="title" value="{{verse.title}}" required>
+                        <label for="title" class="blue-text">Verse Title</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field">
+                        <h5 class="blue-text">Verse Content:</h5>
+                        <textarea name="content">{{verse.content}}</textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <input type="submit" value="Save" class="btn">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
